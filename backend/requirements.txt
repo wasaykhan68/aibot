@@ -1,0 +1,9 @@
+fastapi
+uvicorn[standard]
+sqlalchemy
+python-dotenv
+pyjwt
+httpx
+python-multipart
+beautifulsoup4
+pypdf

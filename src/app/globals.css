@@ -24,3 +24,69 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@keyframes product-preview-backdrop {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes product-preview-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.66) translateY(32px) rotate(-3deg);
+    filter: blur(14px);
+  }
+  60% {
+    opacity: 1;
+    filter: blur(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0) rotate(0deg);
+    filter: blur(0);
+  }
+}
+
+@keyframes product-preview-caption {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.product-preview-backdrop {
+  animation: product-preview-backdrop 280ms ease-out forwards;
+}
+
+.product-preview-pop {
+  animation: product-preview-pop 520ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.product-preview-caption {
+  animation: product-preview-caption 420ms 120ms ease-out both;
+}
+
+.hide-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .product-preview-backdrop,
+  .product-preview-pop,
+  .product-preview-caption {
+    animation: none;
+  }
+}
